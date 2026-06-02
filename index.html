@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Duct Cleaners Pro | Arlington VA | Professional Cleaning Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Reset & Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg-dark: #0a0a0c;
+            --bg-card: #141417;
+            --accent-blue: #00bcd4;
+            --accent-glow: rgba(0, 188, 212, 0.15);
+            --text-main: #ffffff;
+            --text-muted: #a0a0a5;
+            --border-color: #222226;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        /* Header Section */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 12, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-blue);
+            text-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .cta-header-btn {
+            background: transparent;
+            border: 1px solid var(--accent-blue);
+            color: var(--accent-blue);
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .cta-header-btn:hover {
+            background: var(--accent-blue);
+            color: var(--bg-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(135deg, rgba(10,10,12,0.95) 40%, rgba(10,10,12,0.7) 100%), 
+                        url('https://dreamswire.com/wp-content/uploads/2021/12/air-duct-cleaning-services-s-r-air-duct-cleaning-services.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(transparent, var(--bg-dark));
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-blue);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+        }
+
+        .hero h1 span {
+            color: var(--accent-blue);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: var(--bg-dark);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(0, 188, 212, 0.4);
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 188, 212, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .btn-secondary:hover {
+            background: var(--border-color);
+            transform: translateY(-2px);
+        }
+
+        /* General Section Layouts */
+        section {
+            padding: 100px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title h2 span {
+            color: var(--accent-blue);
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--accent-glow);
+        }
+
+        .service-card .icon {
+            font-size: 2rem;
+            color: var(--accent-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Reviews Section */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .stars {
+            color: #ffb400;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .review-text {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .reviewer-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #2a2a30;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--accent-blue);
+        }
+
+        /* Why Choose Us Section */
+        .choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .choose-card {
+            background: linear-gradient(180deg, var(--bg-card) 0%, rgba(20, 20, 23, 0.4) 100%);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            transition: border-color 0.3s ease;
+        }
+
+        .choose-card:hover {
+            border-color: rgba(0, 188, 212, 0.4);
+        }
+
+        .choose-number {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.03);
+            user-select: none;
+        }
+
+        .choose-card h3 {
+            font-size: 1.25rem;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .choose-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            background: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            color: var(--text-main);
+            border-radius: 4px;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--accent-blue);
+        }
+
+        /* Modernized Footprint Matrix Footer */
+        footer {
+            background-color: #0d0d11;
+            border-top: 1px solid var(--border-color);
+            padding: 5px 0 0 0; /* Tightened wrapper for nested blocks */
+        }
+
+        .footer-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem 3rem 2rem;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 1fr 1.2fr;
+            gap: 3rem;
+        }
+
+        .footer-brand img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            max-width: 260px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background-color: var(--accent-blue);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-blue);
+            padding-left: 4px;
+        }
+
+        .footer-cinfo p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+
+        .footer-cinfo p strong {
+            color: var(--text-main);
+        }
+
+        .footer-map iframe {
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid var(--border-color) !important;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 968px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .footer-wrap { grid-template-columns: 1fr; gap: 2.5rem; padding-top: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="https://airductcleanerspro.com/wp-content/uploads/2026/05/Air-Duct-Cleaners-Pro-Logo-Light.png" alt="Air Duct Cleaners Pro Logo">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#why-choose-us">Why Choose Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="tel:5713848956" class="cta-header-btn">(571) 384-8956</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-badge">
+                <span>📍</span> Proudly Serving Arlington, VA
+            </div>
+            <h1>Your Trusted Experts for Air Duct Cleaning & <span>Indoor Air Quality</span>.</h1>
+            <p>Air Duct Cleaners Pro provides professional air duct cleaning and <a href="https://maps.app.goo.gl/DtL25n3P349gmKW38"
+   target="_blank"
+   rel="noopener noreferrer"
+   style="color:#0077cc; text-decoration:none; font-weight:600;">
+   indoor air quality solutions in Arlington, VA
+</a>. Our experienced team removes dust, allergens, and debris from your HVAC system, helping create a cleaner, healthier, and more comfortable environment for your home or business.</p>
+            <div class="btn-group">
+                <a href="#contact" class="btn-primary">Request a Free Quote</a>
+                <a href="tel:5713848956" class="btn-secondary">Call Now: (571) 384-8956</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-grid">
+            <div>
+                <div style="color: var(--accent-blue); font-weight:600; margin-bottom:1rem; text-transform:uppercase; letter-spacing:1px;">Arlington's Air Quality Specialists</div>
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Professional Air Duct & Dryer Vent Cleaning</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Based in Arlington, VA, Air Duct Cleaners Pro provides professional air duct and <a href="https://www.google.com/search?kgmid=/g/11w582x_lj"
+   target="_blank"
+   rel="noopener noreferrer"
+   style="color:#0077cc; text-decoration:none; font-weight:600;">
+   dryer vent cleaning services
+</a> for homes and businesses. We remove dust, debris, and lint buildup to improve airflow, enhance efficiency, and promote healthier indoor air quality.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-card">
+                    <h3>24/7</h3>
+                    <p style="color: var(--text-muted);">Emergency Callout Available</p>
+                </div>
+                <div class="stat-card">
+                    <h3>250+</h3>
+                    <p style="color: var(--text-muted);">Verified Happy Clients</p>
+                </div>
+                <div class="stat-card">
+                    <h3>5.0</h3>
+                    <p style="color: var(--text-muted);">Average Google Rating</p>
+                </div>
+                <div class="stat-card">
+                    <h3>100%</h3>
+                    <p style="color: var(--text-muted);">Satisfaction Protection</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="section-title">
+            <h2>More Expert <span>Services</span></h2>
+            <p>Discover additional professional <a href="https://airductcleanerspro.com/"
+   target="_blank"
+   rel="noopener noreferrer"
+   style="color:#0077cc; text-decoration:none; font-weight:600;">
+   cleaning solutions
+</a> designed to keep your property safe, efficient, and comfortable.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon">💨</div>
+                <h3>Air Duct Cleaning</h3>
+                <p>Complete elimination of dust, allergen particulates, and microbial buildup inside your HVAC pathways.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🔥</div>
+                <h3>Dryer Vent Cleaning</h3>
+                <p>Critical lint clearance routines that vastly decrease home fire hazards and increase dryer efficiency.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🧱</div>
+                <h3>Chimney Cleaning</h3>
+                <p>Professional creosote sweeps and soot mitigation structures to protect residential fireplace usage.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🧼</div>
+                <h3>Carpet Cleaning</h3>
+                <p>Industrial deep-extraction processing to clear stubborn fiber staining and locked-in dust profiles.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🏢</div>
+                <h3>Commercial Cleaning</h3>
+                <p>Heavy-duty scalable ventilation cleanings tailor-made for corporate facilities and industrial spaces.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <div class="section-title">
+            <h2>What Our <span>Clients Say</span></h2>
+            <p>Consistently rated 5.0 stars by property owners across our coverage footprints.</p>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Outstanding service! They arrived exactly on time to our Arlington home, thoroughly walked me through the process, and removed a massive amount of hidden dust. Highly recommend!"</p>
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar">M</div>
+                    <div>
+                        <h4>Marcus V.</h4>
+                        <p style="font-size:0.8rem; color:var(--text-muted);">Verified Homeowner</p>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Incredibly professional team. Our dryer is running twice as fast now after their deep vent clearout. Worth every penny for the safety value alone."</p>
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar">S</div>
+                    <div>
+                        <h4>Sarah T.</h4>
+                        <p style="font-size:0.8rem; color:var(--text-muted);">Verified Homeowner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose-us">
+        <div class="section-title">
+            <h2>Why Choose <span>Air Duct Cleaners Pro</span></h2>
+            <p>We deliver elite standards that safeguard your home, family health, and utility expenses.</p>
+        </div>
+        <div class="choose-grid">
+            <div class="choose-card">
+                <div class="choose-number">01</div>
+                <h3 style="color: var(--accent-blue);">Expert Techs</h3>
+                <p>Highly trained professionals equipped with industrial negative-pressure vacuums and specialized tooling.</p>
+            </div>
+            <div class="choose-card">
+                <div class="choose-number">02</div>
+                <h3 style="color: var(--accent-blue);">Upfront Rates</h3>
+                <p>Clear transparent pricing with zero hidden fees, surprise upcharges, or bait-and-switch hooks.</p>
+            </div>
+            <div class="choose-card">
+                <div class="choose-number">03</div>
+                <h3 style="color: var(--accent-blue);">Health Centric</h3>
+                <p>Targeted elimination of pollen, dander, mold spores, and microdust that cause indoor respiratory irritation.</p>
+            </div>
+            <div class="choose-card">
+                <div class="choose-number">04</div>
+                <h3 style="color: var(--accent-blue);">Energy Savings</h3>
+                <p>Clearing blocked passages immediately alleviates stress off HVAC fans, noticeably lowering electrical bills.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Let's Get Your Air <span>Pure Again</span></h3>
+                <p style="color: var(--text-muted); margin-bottom: 2.5rem;">Have questions or want to lock in an appointment slot? Reach out directly via our verified avenues below.</p>
+                
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div>
+                        <p style="color: var(--text-muted); font-size: 0.85rem;">Call Or Text Us</p>
+                        <h4><a href="tel:5713848956" style="color: var(--text-main);">(571) 384-8956</a></h4>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">✉️</div>
+                    <div>
+                        <p style="color: var(--text-muted); font-size: 0.85rem;">Email Dispatch</p>
+                        <h4><a href="mailto:airductvent@outlook.com" style="color: var(--text-main);">airductvent@outlook.com</a></h4>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div>
+                        <p style="color: var(--text-muted); font-size: 0.85rem;">Headquarters</p>
+                        <h4>401 12th St S, Arlington, VA 22202, USA</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form action="#" onsubmit="event.preventDefault(); alert('Quote Request Simulating Submission!');">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Requested Service</label>
+                        <input type="text" id="service" placeholder="e.g., Air Duct & Dryer Vent Cleaning">
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer; margin-top: 1rem;">Send Quote Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-wrap">
+            <div class="footer-brand">
+                <img src="https://airductcleanerspro.com/wp-content/uploads/2026/05/Air-Duct-Cleaners-Pro-Logo-Light.png" alt="Air Duct Cleaners Pro Footer Logo">
+                <p>Providing premium residential and commercial indoor air quality improvements across Arlington, Virginia and surrounding areas.</p>
+            </div>
+            <div class="footer-col footer-cinfo">
+                <h4>Contact Info</h4>
+                <p><span>📞</span> <strong>Phone:</strong> <br><a href="tel:5713848956" style="color:var(--accent-blue);">(571) 384-8956</a></p>
+                <p><span>✉️</span> <strong>Email:</strong> <br><a href="mailto:airductvent@outlook.com" style="color:var(--text-muted);">airductvent@outlook.com</a></p>
+                <p><span>📍</span> <strong>Office:</strong> <br>401 12th St S, <br>Arlington, VA 22202, USA</p>
+            </div>
+
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#why-choose-us">Why Choose Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            
+            <div class="footer-col footer-map">
+                <h4>Our Location</h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3106.653669643197!2d-77.0527635!3d38.863284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b727863e630f%3A0x164ac4b775caaa68!2sAir%20Duct%20Cleaners%20Pro%20%5BAir%20Duct%20Vent%20LLC%5D!5e0!3m2!1sen!2s!4v1780419505888!5m2!1sen!2s" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Air Duct Cleaners Pro. All Rights Reserved. Proudly based in Arlington, VA, USA.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
